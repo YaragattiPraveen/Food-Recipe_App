@@ -13,7 +13,7 @@ const Navbar = () => {
     <>
       {/* Menu screen for large device */}
       <div className="relative container mx-auto">
-        <nav className="pt-7 lg:px-0 flex items-center px-3 justify-between flex-wrap">
+        <nav className="pt-7 lg:px-0 flex items-center px-3 justify-between flex-wrap shadow-lg pb-3">
           <div className="logo">
             <h1 className="text-2xl font-bold">
               Food<span className="text-custom-green">Mood</span>
@@ -55,7 +55,7 @@ const Navbar = () => {
               </Link>
             </ul>
           </div>
-          <div className="hidden lg:flex relative items-center">
+          <div className="hidden lg:flex relative items-center px-2">
             <span className="absolute py-2 px-3">
               <BiSearch />
             </span>
