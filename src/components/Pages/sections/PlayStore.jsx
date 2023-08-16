@@ -5,7 +5,7 @@ import bgImg from "../../../assets/background_image1.jpg";
 import Button from "../../Re_Usable_componets/Button";
 import { HiOutlineMail } from "react-icons/hi";
 
-const PlayStor = () => {
+const PlayStore = () => {
   return (
     <>
       <div className="container bg-section-bg-color md:pt-[500px] lg:pt-0 py-10 mx-auto md:h-auto lg:flex items-center justify-center lg:justify-between">
@@ -92,4 +92,4 @@ const PlayStor = () => {
   );
 };
 
-export default PlayStor;
+export default PlayStore;

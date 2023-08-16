@@ -3,37 +3,30 @@ import React from "react";
 const Card = ({ recipe }) => {
   console.log(recipe);
   return (
-    <div className="relative h-[400px] flex w-[95%] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
+    <div className="relative h-[480px] my-3 flex w-[95%] flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md">
       <div className="relative mx-4 mt-4 h-60 overflow-hidden rounded-xl bg-white bg-clip-border text-gray-700">
         <img src={recipe.image} alt={recipe.label} />
       </div>
-      <div className="py-6 px-4 text-center">
-        <h4 className="mb-2 block font-sans text-xl font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased text-content-color capitalize text-center">
-          {recipe.label}
+      <div className="py-2 px-4 text-center">
+        <h4 className="mb-1 font-sans block text-sm md:text-lg font-semibold leading-snug tracking-normal text-blue-gray-900 antialiased text-content-color capitalize text-center">
+          {recipe.label.slice(0, 38)}
         </h4>
-        <p className="block bg-gradient-to-tr from-custom-green to-custom-green bg-clip-text font-sans text-base font-medium leading-relaxed text-transparent antialiased">
+        <p className="block text-sm bg-gradient-to-tr underline underline-offset-2 text-custom-green bg-clip-text font-sans leading-relaxed capitalize antialiased">
           {recipe.mealType[0]}
         </p>
-      </div>
-      <div className="flex justify-center gap-7 p-6 pt-2">
-        <a
-          href="#facebook"
-          className="block bg-gradient-to-tr from-blue-600 to-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
-        >
-          <i className="fab fa-facebook" aria-hidden="true" />
-        </a>
-        <a
-          href="#twitter"
-          className="block bg-gradient-to-tr from-light-blue-600 to-light-blue-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
-        >
-          <i className="fab fa-twitter" aria-hidden="true" />
-        </a>
-        <a
-          href="#instagram"
-          className="block bg-gradient-to-tr from-purple-600 to-purple-400 bg-clip-text font-sans text-xl font-normal leading-relaxed text-transparent antialiased"
-        >
-          <i className="fab fa-instagram" aria-hidden="true" />
-        </a>
+        <div className="flex justify-between items-center py-2">
+          <div>
+            <span className="block text-sm md:text-base text-content-color bg-clip-text font-sans leading-relaxed">Cuisine Type</span>
+            <span className=" pt-3 text-sm md:text-base text-custom-green capitalize">{recipe.cuisineType[0]}</span>
+          </div>
+          <div>
+            <span className="block text-sm md:text-base text-content-color bg-clip-text font-sans leading-relaxed  antialiased">Calories</span>
+            <span className="text-custom-green text-sm md:text-base pt-2 ">{recipe.calories.toFixed(1)} Kcal</span>
+          </div>
+        </div>
+        <div className="flex items-baseline justify-center">
+          <button className="text-rich-white bg-custom-green py-2 my-3 w-full rounded-md text-sm md:text-base">Checkout Recipe</button>
+        </div>
       </div>
     </div>
   );

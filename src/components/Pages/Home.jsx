@@ -1,9 +1,10 @@
 import Popular_Food from "./sections/Popular_Food";
 import Home_Section from "./sections/Home_Section";
 import Chefs from "./sections/Chefs";
-import PlayStor from "./sections/PlayStor";
 import { useQuery } from "@tanstack/react-query";
 import { getHealthyRecipe, getRecipeByCuisine, getRecipeByDiet, getRecipeByDish, getRecipeById, getRecipeByMeal, getRecipeBySearch } from "../../Actions/Actions";
+import Carousel from "../Re_Usable_componets/Carousel";
+import PlayStore from "./sections/PlayStore";
 
 const Home = () => {
 
@@ -58,7 +59,8 @@ const Home = () => {
           <Home_Section />
           <Popular_Food />
           <Chefs />
-          <PlayStor />
+          <Carousel data={data}/>
+          <PlayStore />
         </>
       )}
     </>
