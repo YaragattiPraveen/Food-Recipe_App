@@ -5,6 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/Pages/About";
 import Recipe from "./components/Pages/Recipe";
 import Contact from "./components/Pages/Contact";
+import RecipeDetailPage from "./components/Pages/RecipeDetailPage";
+import Notfound from "./components/Pages/Notfound";
 
 function App() {
   return (
@@ -14,9 +16,11 @@ function App() {
           <Navbar />
           <Routes>
             <Route index path="/" element={<Home />} />
-            <Route path="/about" element={<About/>} />
-            <Route path="/recipe" element={<Recipe/>} />
-            <Route path="/contact-us" element={<Contact/>} />
+            <Route path="/about" element={<About />} />
+            <Route path="/recipe" element={<Recipe />} />
+            <Route path="/contact-us" element={<Contact />} />
+            <Route path="/recipe-details/:id" element={<RecipeDetailPage />} />
+            <Route path="*" element={<Notfound />} />
           </Routes>
         </div>
         <Footer />

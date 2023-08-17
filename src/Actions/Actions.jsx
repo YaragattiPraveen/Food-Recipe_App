@@ -1,8 +1,8 @@
 import {EndPoint} from "../Utils/Endpoint";
 import sendApiReq from "../Utils/SendApi";
 
-export function getHealthyRecipe() {
-  const healthy = "vegetarian"
+export function getHealthyRecipe({healthy}) {
+  console.log(healthy);
   return sendApiReq({
     url: EndPoint.commonUrl + `&health=${healthy}` ,
   });
@@ -13,37 +13,36 @@ export function getRecipeBySearch(){
     url: EndPoint.bySearch,
   })
 }
-
-export function getRecipeById(){
-  const recipe_Id = "4bb99424e1bbc40d3cd1d891883d6745"
+ 
+export function getRecipeById({id}){
+  // const recipe_Id = "4bb99424e1bbc40d3cd1d891883d6745"
+  console.log(id);
   return sendApiReq({
-    url: `/${recipe_Id}` + EndPoint.commonUrl
+    url: `/${id}` + EndPoint.commonUrl
   })
 }
 
-export function getRecipeByCuisine(){
-  const cuisine = "Mexican"
+export function getRecipeByCuisine(cuisine){
   return sendApiReq({
     url: EndPoint.commonUrl + `&cuisineType=${cuisine}`
   })
 }
 
-export function getRecipeByDiet(){
-  const diet = "high-fiber"
+export function getRecipeByDiet(diet){
   return sendApiReq({
     url: EndPoint.commonUrl + `&diet=${diet}`
   })
 }
 
-export function getRecipeByMeal(){
-  const meal = "Dinner"
+export function getRecipeByMeal(meal){
+  
   return sendApiReq({
     url: EndPoint.commonUrl + `&mealType=${meal}`
   })
 }
 
-export function getRecipeByDish(){
-  const dish = "Soup"
+export function getRecipeByDish(dish){
+  
   return sendApiReq({
     url: EndPoint.commonUrl + `&dishType=${dish}`
   })

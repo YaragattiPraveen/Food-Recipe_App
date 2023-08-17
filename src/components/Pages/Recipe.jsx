@@ -48,15 +48,19 @@ const Recipe = () => {
     },
   ];
 
+  const dish = "Soup"
   const { isLoading, data } = useQuery({
     queryKey: ["RecipeByDish"],
-    queryFn: getRecipeByDish,
+    queryFn: getRecipeByDish(dish),
   });
+
+  const cuisine = "Mexican"
   const {isLoading1,data:data1} = useQuery({
-    queryKey: [],
-    queryFn: getRecipeByCuisine,
+    queryKey: ["RecipeByCuisine"],
+    queryFn: getRecipeByCuisine(cuisine),
   })
 
+  console.log(data,data1);
   // console.log(data?.hits?.map((item) => console.log(item)));
 
   return (
